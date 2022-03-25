@@ -100,7 +100,7 @@ $(OBJ_DIR)/$(LIB): $(OBJECTS)
 	$(QUIET_AR)$(AR) $(ARFLAGS) $@ $^
 	$(QUIET_RANLIB)$(RANLIB) $@
 
-$(OBJ_DIR)/%.o: %.c $(OBJ_DIR)/.cflags | $$(@D)/.
+$(OBJ_DIR)/%.o: src/%.c $(OBJ_DIR)/.cflags | $$(@D)/.
 	$(QUIET_CC)$(CC) $(CFLAGS) -o $@ -c $<
 
 .PRECIOUS: $(OBJ_DIR)/. $(OBJ_DIR)%/.
