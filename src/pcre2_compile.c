@@ -5730,7 +5730,7 @@ for (;; pptr++)
   BOOL match_all_or_no_wide_chars;
   BOOL possessive_quantifier;
   BOOL note_group_empty;
-  int class_has_8bitchar;
+  PCRE2_MAYBE_UNUSED int class_has_8bitchar;
   uint32_t mclength;
   uint32_t skipunits;
   uint32_t subreqcu, subfirstcu;
