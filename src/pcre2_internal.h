@@ -70,6 +70,12 @@ typedef int BOOL;
 #define TRUE    1
 #endif
 
+#if defined(__clang__) || defined(__GNUC__)
+#define PCRE2_MAYBE_UNUSED __attribute__((unused))
+#else
+#define PCRE2_MAYBE_UNUSED
+#endif
+
 /* Valgrind (memcheck) support */
 
 #ifdef SUPPORT_VALGRIND
