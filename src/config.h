@@ -38,7 +38,7 @@
 /* #undef SUPPORT_PCRE2GREP_JIT  */
 /* #undef SUPPORT_PCRE2GREP_CALLOUT  */
 /* #undef SUPPORT_PCRE2GREP_CALLOUT_FORK  */
-#define SUPPORT_UNICODE 1
+/* #undef SUPPORT_UNICODE */
 /* #undef SUPPORT_VALGRIND */
 
 /* #undef BSR_ANYCRLF */
