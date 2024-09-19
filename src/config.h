@@ -3,11 +3,23 @@
 #ifndef __has_builtin
 #define __has_builtin(x) 0
 #endif
+#ifndef __has_attribute
+#define __has_attribute(x) 0
+#endif
 
 #if __has_builtin(__builtin_mul_overflow)
 #define HAVE_BUILTIN_MUL_OVERFLOW 1
 #endif
-/* #undef HAVE_ATTRIBUTE_UNINITIALIZED */
+#if __has_builtin(__builtin_unreachable)
+#define HAVE_BUILTIN_UNREACHABLE 1
+#endif
+#if defined(_MSC_VER) && !defined(__clang__)
+#define HAVE_BUILTIN_ASSUME 1
+#endif
+
+#if __has_attribute(uninitialized)
+#define HAVE_ATTRIBUTE_UNINITIALIZED 1
+#endif
 #define HAVE_DIRENT_H 1
 #define HAVE_SYS_STAT_H 1
 #define HAVE_SYS_TYPES_H 1
