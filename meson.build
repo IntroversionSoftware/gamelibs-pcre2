@@ -5,7 +5,8 @@ project('pcre2', 'c',
 compiler = meson.get_compiler('c')
 link_deps = []
 incdirs = ['src']
-c_flags = ['-DHAVE_CONFIG_H=1', '-DPCRE2_CODE_UNIT_WIDTH=8', '-DPCRE2_STATIC']
+c_flags_local = ['-DHAVE_CONFIG_H=1']
+c_flags = ['-DPCRE2_CODE_UNIT_WIDTH=8', '-DPCRE2_STATIC']
 
 sources = [
     'src/pcre2_auto_possess.c',
@@ -46,13 +47,13 @@ incdirs = include_directories(incdirs)
 pcre2_lib = library(
     'pcre2',
     sources,
-    c_args: c_flags,
+    c_args: c_flags + c_flags_local,
     include_directories: incdirs,
     dependencies: link_deps,
 )
 
 pcre2_dep = declare_dependency(
-	compile_args: c_flags,
+    compile_args: c_flags,
     include_directories: incdirs,
     dependencies: link_deps,
     link_with: pcre2_lib,
