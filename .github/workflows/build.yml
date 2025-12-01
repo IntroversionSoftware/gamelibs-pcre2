@@ -307,7 +307,7 @@ jobs:
         run: ./autogen.sh
 
       - name: Build & test
-        uses: vmactions/freebsd-vm@487ce35b96fae3e60d45b521735f5aa436ecfade # v1.2.4
+        uses: vmactions/freebsd-vm@0cd283ca698d48b59cda444a9948f48a30709627 # v1.2.8
         with:
           envs: 'CFLAGS_GCC_STYLE CMAKE_FLAGS'
           usesh: true
@@ -367,7 +367,7 @@ jobs:
         run: ./autogen.sh
 
       - name: Build & test
-        uses: vmactions/solaris-vm@58cbd70c6e051860f9b8f65908cc582938fbbdba # v1.1.5
+        uses: vmactions/solaris-vm@47bea106d03acaf91084e52548ee460556011602 # v1.1.8
         with:
           envs: 'CFLAGS_SOLARIS_CC CMAKE_FLAGS'
           usesh: true
